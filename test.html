@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="mobiscroll.2.13.2.css">
+    <link rel="stylesheet" href="mobiscroll.scroller.css">
+    <script src="jquery-1.9.1.js"></script>
+    <script src="mobiscroll.2.13.2.js"></script>
+    <script src="mobiscroll.list.js"></script>
+    <script src="mobiscroll.core.js"></script>
+    <style>
+        .mbsc-android-holo .dwv {
+            text-align: left;
+            text-indent: 8em;
+        }
+    </style>
+</head>
+<body>
+<ul id="treelist">
+    <li>万</li>
+    <li>百万</li>
+    <li>千万</li>
+    <li>万</li>
+</ul>
+<script>
+    $(function(){
+        $("#treelist").mobiscroll().treelist({
+            theme:"android-ics light",
+            lang:"zh",
+            defaultValue:[Math.floor($('#treelist li').length/2)],
+            cancelText:null,
+            headerText:function(valueText){return "选择班级";}
+        })
+    })
+</script>
+</body>
+</html>
